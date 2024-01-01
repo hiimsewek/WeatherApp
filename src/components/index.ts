@@ -1,1 +1,1 @@
-export { IconButton } from "./UI";
+export { IconButton, Input, type InputProps } from "./UI";
