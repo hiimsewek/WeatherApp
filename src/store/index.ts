@@ -1,1 +1,6 @@
-export { default as store, type AppDispatch, type RootState } from "./store";
+export {
+  default as store,
+  persistor,
+  type AppDispatch,
+  type RootState,
+} from "./store";
