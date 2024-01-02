@@ -3,7 +3,7 @@ import { StyledIconBtn, StyledInput } from "./Input.styled";
 
 const Input = ({ iconRight, onIconRightClick, ...props }: InputProps) => {
   const iconRightBtn = iconRight && (
-    <StyledIconBtn iconName={iconRight} onClick={onIconRightClick} />
+    <StyledIconBtn icon={iconRight} onClick={onIconRightClick} />
   );
 
   return (

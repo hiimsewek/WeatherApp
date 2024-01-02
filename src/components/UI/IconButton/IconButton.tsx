@@ -1,14 +1,15 @@
 import { Icon, IconButtonProps as MuiIconButtonProps } from "@mui/material";
+import { SvgIconComponent } from "@mui/icons-material";
 import { StyledIconButton } from "./IconButton.styled";
 
 type IconButtonProps = MuiIconButtonProps & {
-  iconName: string;
+  icon: SvgIconComponent;
 };
 
-const IconButton = ({ iconName, ...props }: IconButtonProps) => {
+const IconButton = ({ icon, ...props }: IconButtonProps) => {
   return (
     <StyledIconButton {...props}>
-      <Icon>{iconName}</Icon>
+      <Icon component={icon} />
     </StyledIconButton>
   );
 };
