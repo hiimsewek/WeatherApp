@@ -26,7 +26,7 @@ export const theme = createTheme({
     },
     text: {
       primary: COLORS.blue50,
-      disabled: COLORS.gray200,
+      disabled: COLORS.gray600,
     },
     divider: COLORS.blue50,
   },
