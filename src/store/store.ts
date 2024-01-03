@@ -1,5 +1,13 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { persistReducer } from "redux-persist";
+import {
+  FLUSH,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+  REHYDRATE,
+  persistReducer,
+} from "redux-persist";
 import persistStore from "redux-persist/es/persistStore";
 import storage from "redux-persist/lib/storage";
 import { geocodingApi, historyReducer } from "@features/LocationSearch";
@@ -21,7 +29,11 @@ const persistedReducer = persistReducer(persistConfig, rootReducers);
 const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(geocodingApi.middleware),
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }).concat(geocodingApi.middleware),
 });
 
 export const persistor = persistStore(store);
