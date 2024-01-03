@@ -3,10 +3,12 @@ import { persistReducer } from "redux-persist";
 import persistStore from "redux-persist/es/persistStore";
 import storage from "redux-persist/lib/storage";
 import { geocodingApi, historyReducer } from "@features/LocationSearch";
+import { preferencesReducer } from "@features/WeatherPreferences";
 
 const rootReducers = combineReducers({
   [geocodingApi.reducerPath]: geocodingApi.reducer,
   history: historyReducer,
+  preferences: preferencesReducer,
 });
 
 const persistConfig = {
