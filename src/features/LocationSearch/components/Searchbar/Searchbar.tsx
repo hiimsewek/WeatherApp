@@ -4,10 +4,16 @@ import { StyledSearchbar } from "./Searchbar.styled";
 import { Search } from "@mui/icons-material";
 
 type SearchbarProps = InputProps & {
+  autoFocus: boolean;
   expand: boolean;
   onExpand: () => void;
 };
-const Searchbar = ({ expand, onExpand, ...props }: SearchbarProps) => {
+const Searchbar = ({
+  autoFocus,
+  expand,
+  onExpand,
+  ...props
+}: SearchbarProps) => {
   return (
     <Grid display="flex" alignItems="center">
       {!expand && <IconButton icon={Search} onClick={onExpand} />}
@@ -15,6 +21,7 @@ const Searchbar = ({ expand, onExpand, ...props }: SearchbarProps) => {
       <StyledSearchbar
         {...props}
         expand={+expand}
+        inputRef={(input) => input && autoFocus && input.focus()}
         startAdornment={<Icon component={Search} />}
       />
     </Grid>

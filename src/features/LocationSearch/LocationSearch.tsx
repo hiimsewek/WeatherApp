@@ -6,6 +6,7 @@ import useLocationSearch from "./useLocationSearch";
 
 const SearchLocation = () => {
   const {
+    autoFocus,
     changeValueHandler,
     expand,
     expanded,
@@ -36,6 +37,7 @@ const SearchLocation = () => {
           onIconRightClick={retrieveLocationHandler}
           expand={expanded}
           onExpand={expand}
+          autoFocus={autoFocus}
           onFocus={focus}
           onKeyDown={locationSubmitHandler}
         />

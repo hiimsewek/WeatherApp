@@ -26,6 +26,8 @@ const useLocationSearch = () => {
     setExpanded(true);
   };
 
+  const autoFocus = expanded && isSmallDevice;
+
   const focus = () => {
     setFocused(true);
   };
@@ -83,6 +85,7 @@ const useLocationSearch = () => {
 
   return {
     expanded,
+    autoFocus,
     focused,
     focus,
     retrieveLocationHandler,
