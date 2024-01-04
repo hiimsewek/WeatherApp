@@ -11,19 +11,21 @@ const App = () => {
           <Box
             sx={{
               display: "flex",
-              justifyContent: {
-                xs: "flex-end",
-                lg: "center",
-              },
+              justifyContent: "center",
+              position: "relative",
               "& .MuiBox-root": {
                 width: "100%",
+              },
+              "& .css-143rofo-MuiButtonBase-root-MuiIconButton-root": {
+                position: "absolute",
+                top: 0,
+                right: 0,
               },
             }}
           >
             <LocationSearch />
           </Box>
         </Grid>
-
         <Grid item>
           <WeatherPreferences />
         </Grid>

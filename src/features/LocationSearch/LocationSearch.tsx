@@ -40,7 +40,12 @@ const SearchLocation = () => {
           onKeyDown={locationSubmitHandler}
         />
         {displayResults && (
-          <LocationResults locations={locations} onItemPick={resetSearchbar} />
+          <Box position="relative">
+            <LocationResults
+              locations={locations}
+              onItemPick={resetSearchbar}
+            />
+          </Box>
         )}
       </Box>
     </ClickAwayListener>
