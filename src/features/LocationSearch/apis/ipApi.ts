@@ -1,4 +1,5 @@
 import { IpLocationData } from "../types";
+import { showToast } from "../utils/toast";
 
 export const getCurrentLocation = async () => {
   try {
@@ -7,5 +8,6 @@ export const getCurrentLocation = async () => {
     return { ...data } as IpLocationData;
   } catch (e) {
     console.error("Could not fetch location data");
+    showToast("Could not fetch location data", "error");
   }
 };
