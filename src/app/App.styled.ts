@@ -24,3 +24,17 @@ export const SearchContainer = styled(Box)<BoxProps>(() => ({
     right: 0,
   },
 }));
+
+export const DashboardContainer = styled(Box)<BoxProps>(
+  ({ theme: { breakpoints } }) => ({
+    margin: "10px 8px",
+
+    [breakpoints.up("lg")]: {
+      margin: 0,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      minHeight: "calc(100vh - 80px)",
+    },
+  })
+);

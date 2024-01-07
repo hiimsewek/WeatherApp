@@ -12,17 +12,19 @@ import persistStore from "redux-persist/es/persistStore";
 import storage from "redux-persist/lib/storage";
 import { geocodingApi, historyReducer } from "@features/LocationSearch";
 import { preferencesReducer } from "@features/WeatherPreferences";
+import { weatherApi } from "@features/WeatherDashboard";
 
 const rootReducers = combineReducers({
   [geocodingApi.reducerPath]: geocodingApi.reducer,
   history: historyReducer,
   preferences: preferencesReducer,
+  [weatherApi.reducerPath]: weatherApi.reducer,
 });
 
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: [geocodingApi.reducerPath],
+  blacklist: [geocodingApi.reducerPath, weatherApi.reducerPath],
 };
 const persistedReducer = persistReducer(persistConfig, rootReducers);
 
@@ -33,7 +35,7 @@ const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(geocodingApi.middleware),
+    }).concat(geocodingApi.middleware, weatherApi.middleware),
 });
 
 export const persistor = persistStore(store);

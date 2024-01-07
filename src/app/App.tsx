@@ -1,7 +1,13 @@
 import { ToastContainer } from "react-toastify";
 import { LocationSearch } from "@features/LocationSearch";
 import { WeatherPreferences } from "@features/WeatherPreferences";
-import { AppContainer, Header, SearchContainer } from "./App.styled";
+import { WeatherDashboard } from "@features/WeatherDashboard";
+import {
+  AppContainer,
+  DashboardContainer,
+  Header,
+  SearchContainer,
+} from "./App.styled";
 
 const App = () => {
   return (
@@ -13,6 +19,9 @@ const App = () => {
           </SearchContainer>
           <WeatherPreferences />
         </Header>
+        <DashboardContainer>
+          <WeatherDashboard />
+        </DashboardContainer>
       </AppContainer>
       <ToastContainer />
     </>
