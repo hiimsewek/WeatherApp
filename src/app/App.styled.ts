@@ -1,19 +1,18 @@
-import { Box, BoxProps, Grid, GridProps, styled } from "@mui/material";
+import { Box, BoxProps, styled } from "@mui/material";
 
-export const AppContainer = styled(Grid)<GridProps>(() => ({
-  padding: "20px",
+export const AppContainer = styled(Box)<BoxProps>(() => ({
+  padding: "10px",
 }));
 
-export const Wrapper = styled(Grid)<GridProps>(() => ({
+export const Header = styled(Box)<BoxProps>(() => ({
   flexWrap: "nowrap",
-}));
-
-export const LocationSearchOuterContainer = styled(Grid)<GridProps>(() => ({
-  flexGrow: 1,
-}));
-
-export const LocationSearchInnerContainer = styled(Box)<BoxProps>(() => ({
   display: "flex",
+  flexDirection: "row",
+}));
+
+export const SearchContainer = styled(Box)<BoxProps>(() => ({
+  display: "flex",
+  flexGrow: 1,
   justifyContent: "center",
   position: "relative",
   "& .MuiBox-root": {
