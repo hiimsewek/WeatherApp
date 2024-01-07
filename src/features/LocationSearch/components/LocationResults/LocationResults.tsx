@@ -26,9 +26,11 @@ const LocationResults = ({ locations, onItemPick }: LocationResultsProps) => {
     dispatch(removeFromHistory(id));
   };
 
+  const limitedLocations = locations.slice(0, 10);
+
   return (
     <StyledList>
-      {locations.map((location: LocationItem) => {
+      {limitedLocations.map((location: LocationItem) => {
         const administrativeLevel = location.admin1
           ? `${location.admin1}, `
           : "";
