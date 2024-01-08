@@ -17,7 +17,11 @@ const ForecastHourly = ({ hourly }: ForecastHourly) => {
       <StyledChartContainer>
         <LineChart data={hourly}>
           <XAxis dataKey="time" stroke={palette.primary.contrastText} />
-          <YAxis stroke={palette.primary.contrastText} width={20} />
+          <YAxis
+            stroke={palette.primary.contrastText}
+            width={20}
+            allowDecimals={false}
+          />
           <Tooltip
             cursor={false}
             contentStyle={{
